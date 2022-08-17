@@ -62,5 +62,6 @@ while True:
                 telegram_bot_sendtext("🆘 \n Alarm, moonriver Rank changed! \n Old rank: " + str(rank[1]) + " New rank: " + str(rank[0]))
         print(rank)
         time.sleep(10)
-    except Exception as e:
-        print(1)
+    except:
+        print("Whoops")
+        pass
