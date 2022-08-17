@@ -2,7 +2,6 @@ import time
 import os
 import requests
 from substrateinterface import SubstrateInterface
-import sys
 
 
 # Moonbeam
@@ -48,11 +47,10 @@ def telegram_bot_sendtext(bot_message):
     return response.json()
 
 
-while True:
-    try:
+try:
+    while True:
         conn = connect()
         stakers = get_stakers(conn)
-        # print(stakers)
         rank.insert(0, get_rank(stakers))
         if len(rank) > 2:
             rank.pop(2)
@@ -62,6 +60,6 @@ while True:
                 telegram_bot_sendtext("🆘 \n Alarm, moonriver Rank changed! \n Old rank: " + str(rank[1]) + " New rank: " + str(rank[0]))
         print(rank)
         time.sleep(10)
-    except:
-        print("Whoops")
-        pass
+except:
+    print("Whoops")
+    pass

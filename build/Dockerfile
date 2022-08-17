@@ -7,4 +7,4 @@ RUN pip install requests
 
 COPY script.py script.py
 
-CMD ["python", "script.py"]
+CMD ["python", "-u", "script.py"]
