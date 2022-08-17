@@ -52,7 +52,7 @@ while True:
     try:
         conn = connect()
         stakers = get_stakers(conn)
-        print(stakers)
+        # print(stakers)
         rank.insert(0, get_rank(stakers))
         if len(rank) > 2:
             rank.pop(2)
@@ -62,5 +62,5 @@ while True:
                 telegram_bot_sendtext("🆘 \n Alarm, moonriver Rank changed! \n Old rank: " + str(rank[1]) + " New rank: " + str(rank[0]))
         print(rank)
         time.sleep(10)
-    except:
-        pass
+    except Exception as e:
+        print(1)
