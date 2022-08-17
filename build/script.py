@@ -48,8 +48,8 @@ def telegram_bot_sendtext(bot_message):
     return response.json()
 
 
-try:
-    while True:
+while True:
+    try:
         conn = connect()
         stakers = get_stakers(conn)
         print(stakers)
@@ -62,5 +62,5 @@ try:
                 telegram_bot_sendtext("🆘 \n Alarm, moonriver Rank changed! \n Old rank: " + str(rank[1]) + " New rank: " + str(rank[0]))
         print(rank)
         time.sleep(10)
-except:
-    print(“Whew! ”, sys.exc_info()[0], “ occurred.”)
+    except:
+        pass
