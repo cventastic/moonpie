@@ -59,7 +59,7 @@ try:
             if rank[0] > rank[1]:
                 telegram_bot_sendtext("🆘 \n Alarm, moonriver Rank changed! \n Old rank: " + str(rank[1]) + " New rank: " + str(rank[0]))
         print(rank)
-        time.sleep(10)
+        time.sleep(900)
 except:
     print("Whoops")
     pass
